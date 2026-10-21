@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#faf4ea">
+  <title>Tumhare Naam Ek Khat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       Tumhare Naam Ek Khat — Premium Colourful Reader
+       Warm ivory · rose · gold · dark brown
+       ============================================================ */
+
+    :root {
+      --bg-1: #fbf5eb;
+      --bg-2: #f7ecdd;
+      --paper: #fffdf8;
+      --paper-warm: #fffaf2;
+      --ink: #3a2c22;
+      --ink-soft: #7a6555;
+      --ink-faint: #a89383;
+      --rose: #b8736a;
+      --rose-deep: #9c5a52;
+      --gold: #c9a961;
+      --gold-soft: #e0c99a;
+      --border: #ecdfcd;
+      --border-gold: #e6d3a8;
+      --shadow-sm: 0 1px 3px rgba(58, 44, 34, 0.05);
+      --shadow-md: 0 4px 20px rgba(58, 44, 34, 0.08);
+      --shadow-lg: 0 12px 48px rgba(58, 44, 34, 0.12);
+      --shadow-gold: 0 6px 24px rgba(201, 169, 97, 0.18);
+      --radius: 14px;
+      --font-hindi: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-hindi);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.8;
+      padding: 1rem;
+      padding-bottom: 4rem;
+      background:
+        radial-gradient(ellipse at 15% 0%, rgba(201, 169, 97, 0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 10%, rgba(184, 115, 106, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(184, 115, 106, 0.05) 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hidden { display: none !important; }
+
+    /* ---- shared paper card ---- */
+    .paper {
+      background:
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .view { max-width: 700px; margin: 0 auto; }
+
+    /* ============================================================
+       LOGIN
+       ============================================================ */
+    .login-wrap {
+      min-height: calc(100vh - 2rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      padding: 2.75rem 2rem 2.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .login-ornament {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+      letter-spacing: 0.1em;
+    }
+
+    .login-title {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+      line-height: 1.15;
+    }
+
+    .login-sub {
+      font-family: var(--font-hindi);
+      font-size: 1rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .field { margin-bottom: 1.15rem; text-align: left; }
+
+    .field label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 0.85rem 0.95rem;
+      font-family: var(--font-hindi);
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .field input:focus {
+      border-color: var(--gold);
+      background: var(--paper);
+      box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.13);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-family: var(--font-ui);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.7rem 1.3rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      text-decoration: none;
+      min-height: 46px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(0.975); }
+    .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--rose) 0%, var(--rose-deep) 100%);
+      color: #fffaf2;
+      width: 100%;
+      margin-top: 0.4rem;
+      box-shadow: 0 3px 14px rgba(156, 90, 82, 0.28);
+    }
+    .btn-primary:hover:not(:disabled) {
+      filter: brightness(1.05);
+      box-shadow: 0 5px 20px rgba(156, 90, 82, 0.36);
+    }
+
+    .btn-gold {
+      background: transparent;
+      color: var(--rose-deep);
+      border-color: var(--border-gold);
+      background-image: linear-gradient(180deg, rgba(255,253,248,0.6), rgba(255,250,242,0.9));
+    }
+    .btn-gold:hover {
+      border-color: var(--gold);
+      color: var(--ink);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .error-msg {
+      color: var(--rose-deep);
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      margin-top: 0.8rem;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      background: rgba(184, 115, 106, 0.08);
+      border-radius: 8px;
+      border-left: 3px solid var(--rose);
+    }
+
+    /* ============================================================
+       READER
+       ============================================================ */
+    .reader-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.75rem 0 1.25rem;
+      text-align: center;
+    }
+
+    .site-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--ink);
+      position: relative;
+      padding-bottom: 0.85rem;
+    }
+
+    .site-title::after {
+      content: '❦';
+      position: absolute;
+      bottom: -0.15rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: var(--gold);
+      opacity: 0.85;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 253, 248, 0.65);
+      color: var(--ink-soft);
+      border-color: var(--border);
+      font-size: 0.82rem;
+      padding: 0.5rem 0.95rem;
+      backdrop-filter: blur(6px);
+    }
+    .btn-ghost:hover {
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--gold-soft);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ---- letter card ---- */
+    .letter-card {
+      padding: 2.25rem 1.6rem 1.9rem;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      animation: riseIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .letter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--gold-soft) 20%,
+        var(--gold) 50%,
+        var(--gold-soft) 80%,
+        transparent 100%);
+    }
+
+    .letter-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(201, 169, 97, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at 0% 100%, rgba(184, 115, 106, 0.04) 0%, transparent 40%);
+      border-radius: var(--radius);
+    }
+
+    .letter-quote {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      line-height: 0.6;
+      color: var(--gold-soft);
+      opacity: 0.55;
+      margin-bottom: 0.4rem;
+      font-style: italic;
+      user-select: none;
+    }
+
+    /* ============================================================
+       NEW — Recipient heading ("किसके नाम खत")
+       ============================================================ */
+    .letter-recipient {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 600;
+      color: var(--rose-deep);
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.015em;
+      position: relative;
+      z-index: 1;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* small label above recipient */
+    .letter-to-label {
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .letter-to-label::before,
+    .letter-to-label::after {
+      content: '';
+      flex: 0 0 18px;
+      height: 1px;
+      background: var(--gold-soft);
+    }
+
+    .letter-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .letter-sender {
+      font-family: var(--font-ui);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 1.4rem;
+    }
+
+    .letter-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.5rem 0 1.5rem;
+      color: var(--gold);
+    }
+    .letter-divider::before,
+    .letter-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+    }
+    .letter-divider span {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+    }
+
+    .letter-content {
+      font-family: var(--font-hindi);
+      font-size: 1.13rem;
+      line-height: 2;
+      color: var(--ink);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter-meta {
+      margin-top: 1.9rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-ui);
+      font-size: 0.76rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .letter-meta::before {
+      content: '✎';
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    /* ---- loading ---- */
+    .loading-state {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--ink-soft);
+    }
+    .spinner {
+      width: 30px; height: 30px;
+      border: 2px solid var(--border);
+      border-top-color: var(--gold);
+      border-right-color: var(--rose);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+      margin: 0 auto 1.2rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- empty ---- */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: var(--ink-soft);
+    }
+    .empty-ornament {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--gold-soft);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .empty-title { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--ink); }
+    .empty-sub a { color: var(--rose-deep); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ---- footer ---- */
+    .reader-footer {
+      text-align: center;
+      padding: 3rem 0 1rem;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      opacity: 0.85;
+    }
+    .reader-footer::before {
+      content: '— ❦ —';
+      display: block;
+      font-size: 0.8rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.2em;
+    }
+
+    /* ---- history ---- */
+    .history-section { margin: 2.25rem auto 0; }
+    .history-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.9rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .history-title::before,
+    .history-title::after {
+      content: '·';
+      color: var(--gold);
+      margin: 0 0.5rem;
+    }
+    .history-item {
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 0.55rem;
+      background: rgba(255, 253, 248, 0.7);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold-soft);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(6px);
+    }
+    .history-item:hover {
+      border-left-color: var(--rose);
+      box-shadow: var(--shadow-md);
+      transform: translateX(2px);
+    }
+    .history-item .h-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .history-item .h-recipient {
+      font-family: var(--font-serif);
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--rose-deep);
+      margin-bottom: 0.15rem;
+    }
+    .history-item .h-date {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.03em;
+    }
+
+    /* ---- responsive ---- */
+    @media (min-width: 640px) {
+      body { padding: 2rem; }
+      .site-title { font-size: 2.4rem; }
+      .letter-card { padding: 3rem 2.75rem 2.5rem; }
+      .letter-content { font-size: 1.2rem; }
+      .letter-recipient { font-size: 2.6rem; }
+      .letter-title { font-size: 1.7rem; }
+      .login-card { padding: 3.25rem 2.5rem 2.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       LOGIN VIEW
+       ============================================================ -->
+  <div id="login-view" class="view hidden">
+    <div class="login-wrap">
+      <div class="login-card paper">
+        <div class="login-ornament">❦</div>
+        <h1 class="login-title">Tumhare Naam<br>Ek Khat</h1>
+        <p class="login-sub">एक निजी खत, सिर्फ़ तुम्हारे लिए।</p>
+        <form id="login-form">
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required autocomplete="username" placeholder="tumhara@gmail.com">
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required autocomplete="current-password" placeholder="••••••••">
+          </div>
+          <button type="submit" id="login-btn" class="btn btn-primary">Sign In</button>
+          <p id="login-error" class="error-msg hidden" role="alert"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       READER VIEW
+       ============================================================ -->
+  <div id="reader-view" class="view hidden">
+    <header class="reader-header">
+      <h1 class="site-title">Tumhare Naam Ek Khat</h1>
+      <div class="header-actions">
+        <button id="refresh-btn" class="btn btn-ghost">↻ Refresh</button>
+        <a href="admin.html" class="btn btn-ghost">✎ Write</a>
+        <button id="logout-btn" class="btn btn-ghost">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>पत्र खोला जा रहा है…</p>
+      </div>
+
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-ornament">✦</div>
+        <p class="empty-title">अभी कोई खत नहीं है।</p>
+        <p class="empty-sub">पहला खत लिखने के लिए <a href="admin.html">यहाँ जाएँ</a>।</p>
+      </div>
+
+      <article id="letter-card" class="letter-card paper hidden">
+        <div class="letter-quote">“</div>
+
+        <!-- NEW: "किसके नाम" label + big recipient heading -->
+        <div class="letter-to-label">Khat inke naam</div>
+        <div id="msg-recipient" class="letter-recipient"></div>
+
+        <h2 id="msg-title" class="letter-title"></h2>
+        <p id="msg-sender" class="letter-sender"></p>
+        <div class="letter-divider"><span>❦</span></div>
+        <div id="msg-content" class="letter-content"></div>
+        <footer class="letter-meta">
+          <time id="msg-date"></time>
+        </footer>
+      </article>
+
+      <div id="history-section" class="history-section hidden">
+        <h3 class="history-title">पुराने खत</h3>
+        <div id="history-list"></div>
+      </div>
+    </main>
+
+    <footer class="reader-footer">
+      <p>silently, with love.</p>
+    </footer>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    /* ============================================================
+       CONFIG — apni values yahan daalo
+       ============================================================ */
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL';           // e.g. https://xxxxx.supabase.co
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY'; // anon / publishable key
+    /* ============================================================ */
+
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const $ = (sel) => document.querySelector(sel);
+    const loginView = $('#login-view');
+    const readerView = $('#reader-view');
+    const loginForm = $('#login-form');
+    const loginBtn = $('#login-btn');
+    const loginError = $('#login-error');
+
+    let currentUser = null;
+
+    // ---------- AUTH ----------
+    async function initAuth() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session?.user) {
+        currentUser = session.user;
+        showReader();
+      } else {
+        showLogin();
+      }
+    }
+
+    function showLogin() {
+      loginView.classList.remove('hidden');
+      readerView.classList.add('hidden');
+    }
+
+    function showReader() {
+      loginView.classList.add('hidden');
+      readerView.classList.remove('hidden');
+      loadLatestMessage();
+      subscribeToMessages();
+    }
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      loginError.classList.add('hidden');
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Signing in…';
+
+      const email = $('#login-email').value.trim();
+      const password = $('#login-password').value;
+
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Sign In';
+
+      if (error) {
+        loginError.textContent = error.message;
+        loginError.classList.remove('hidden');
+        return;
+      }
+
+      currentUser = data.user;
+      showReader();
+    });
+
+    $('#logout-btn').addEventListener('click', async () => {
+      await supabaseClient.auth.signOut();
+      currentUser = null;
+      showLogin();
+    });
+
+    // ---------- READER ----------
+    async function loadLatestMessage() {
+      const loading = $('#loading');
+      const empty = $('#empty-state');
+      const card = $('#letter-card');
+
+      loading.classList.remove('hidden');
+      empty.classList.add('hidden');
+      card.classList.add('hidden');
+
+      const { data, error } = await supabaseClient
+        .from('messages')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(1);
+
+      loading.classList.add('hidden');
+
+      if (error) {
+        console.error('Load error:', error);
+        return;
+      }
+
+      if (!data || data.length === 0) {
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      const msg = data[0];
+      renderMessage(msg);
+      loadHistory();
+    }
+
+    function renderMessage(msg) {
+      const card = $('#letter-card');
+
+      // NEW: recipient heading
+      const recipientEl = $('#msg-recipient');
+      if (recipientEl) {
+        recipientEl.textContent = msg.recipient_name || '';
+        // hide whole "khat inke naam" block if empty
+        const labelEl = document.querySelector('.letter-to-label');
+        const hasRecipient = !!msg.recipient_name;
+        recipientEl.style.display = hasRecipient ? 'block' : 'none';
+        if (labelEl) labelEl.style.display = hasRecipient ? 'flex' : 'none';
+      }
+
+      $('#msg-title').textContent = msg.title || '';
+      $('#msg-sender').textContent = msg.sender_label ? `— ${msg.sender_label}` : '';
+      $('#msg-content').textContent = msg.content;
+      $('#msg-date').textContent = formatDate(msg.created_at);
+      card.classList.remove('hidden');
+      card.style.animation = 'none';
+      void card.offsetWidth;
+      card.style.animation = '';
+    }
+
+    async function loadHistory() {
+      const historySection = $('#history-section');
+      const historyList = $('#history-list');
+
+      const { data } = await supabaseClient
+        .from('messages')
+        .select('id, title, recipient_name, created_at')
+        .order('created_at', { ascending: false })
+        .limit(12);
+
+      if (!data || data.length <= 1) {
+        historySection.classList.add('hidden');
+        return;
+      }
+
+      historyList.innerHTML = '';
+      data.slice(1).forEach((m) => {
+        const div = document.createElement('div');
+        div.className = 'history-item';
+
+        // Show recipient (kiske naam) in history too
+        if (m.recipient_name) {
+          const r = document.createElement('div');
+          r.className = 'h-recipient';
+          r.textContent = `→ ${m.recipient_name}`;
+          div.appendChild(r);
+        }
+
+        const t = document.createElement('div');
+        t.className = 'h-title';
+        t.textContent = m.title || '(बिना शीर्षक)';
+        const d = document.createElement('div');
+        d.className = 'h-date';
+        d.textContent = formatDate(m.created_at);
+        div.appendChild(t);
+        div.appendChild(d);
+        div.addEventListener('click', () => loadMessageById(m.id));
+        historyList.appendChild(div);
+      });
+      historySection.classList.remove('hidden');
+    }
+
+    async function loadMessageById(id) {
+      const { data, error } = await supabaseClient
+        .from('messages')
+        .select('*')
+        .eq('id', id)
+        .single();
+      if (error || !data) return;
+      renderMessage(data);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    $('#refresh-btn').addEventListener('click', loadLatestMessage);
+
+    function subscribeToMessages() {
+      try {
+        supabaseClient
+          .channel('messages-realtime')
+          .on('postgres_changes',
+            { event: 'INSERT', schema: 'public', table: 'messages' },
+            () => loadLatestMessage())
+          .subscribe();
+      } catch (_) { /* realtime optional */ }
+    }
+
+    // ---------- UTIL ----------
+    function formatDate(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return d.toLocaleString('hi-IN', {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+    }
+
+    initAuth();
+  </script>
+</body>
+</html>
